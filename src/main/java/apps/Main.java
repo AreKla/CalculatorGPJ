@@ -28,6 +28,15 @@ public class Main {
         }
     }
 
+    private static void instructionsToSum(Calculator calculator) {
+        System.out.println("Enter first number:");
+        int a = scanner.nextInt();
+        System.out.println("Enter second number:");
+        int b = scanner.nextInt();
+        int result = calculator.add(a, b);
+        System.out.println(result);
+    }
+
     private static void instructionsToSubtraction(Calculator calculator) {
         System.out.println("Enter first number:");
         int a = scanner.nextInt();
@@ -37,12 +46,12 @@ public class Main {
         System.out.println(result);
     }
 
-    private static void instructionsToSum(Calculator calculator) {
+    private static void instructionsToMultiple(Calculator calculator) {
         System.out.println("Enter first number:");
         int a = scanner.nextInt();
         System.out.println("Enter second number:");
         int b = scanner.nextInt();
-        int result = calculator.add(a, b);
+        int result = calculator.multiply(a, b);
         System.out.println(result);
     }
 
