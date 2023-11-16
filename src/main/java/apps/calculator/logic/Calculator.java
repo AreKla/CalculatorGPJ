@@ -3,14 +3,14 @@ package apps.calculator.logic;
 public class Calculator {
 
     public int add(Integer a, Integer b) {
-        if (a == null && b == null) {
-            throw new IllegalArgumentException("Both inputs cannot be null");
-        } else if (a == null) {
-            throw new IllegalArgumentException("First input cannot be null");
-        } else if (b == null) {
-            throw new IllegalArgumentException("Second input cannot be null");
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("None of the numbers can be null");
         }
         return a + b;
+    }
+
+    public int subtract(Integer a, Integer b) {
+        return a - b;
     }
 
     public int findMax(int[] array) {

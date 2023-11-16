@@ -41,13 +41,13 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.add(null, 10));
-        assertEquals("First input cannot be null", exception1.getMessage(), "Invalid exception message");
+        assertEquals("None of the numbers can be null", exception1.getMessage(), "Invalid exception message");
 
         IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> calculator.add(10, null));
-        assertEquals("Second input cannot be null", exception2.getMessage(), "Invalid exception message");
+        assertEquals("None of the numbers can be null", exception2.getMessage(), "Invalid exception message");
 
         IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> calculator.add(null, null));
-        assertEquals("Both inputs cannot be null", exception3.getMessage(), "Invalid exception message");
+        assertEquals("None of the numbers can be null", exception3.getMessage(), "Invalid exception message");
     }
 
     @Test
