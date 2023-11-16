@@ -4,13 +4,23 @@ public class Calculator {
 
     public int add(Integer a, Integer b) {
         if (a == null || b == null) {
-            throw new IllegalArgumentException("None of the numbers can be null");
+            throw new IllegalArgumentException("Both numbers must be provided and cannot be null");
         }
         return a + b;
     }
 
     public int subtract(Integer a, Integer b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Both numbers must be provided and cannot be null");
+        }
         return a - b;
+    }
+
+    public int multiply(Integer a, Integer b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Both numbers must be provided and cannot be null");
+        }
+        return a * b;
     }
 
     public int findMax(int[] array) {

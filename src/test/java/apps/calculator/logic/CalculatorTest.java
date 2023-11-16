@@ -41,13 +41,59 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.add(null, 10));
-        assertEquals("None of the numbers can be null", exception1.getMessage(), "Invalid exception message");
+        assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
 
         IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> calculator.add(10, null));
-        assertEquals("None of the numbers can be null", exception2.getMessage(), "Invalid exception message");
+        assertEquals("Both numbers must be provided and cannot be null", exception2.getMessage(), "Invalid exception message");
 
         IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> calculator.add(null, null));
-        assertEquals("None of the numbers can be null", exception3.getMessage(), "Invalid exception message");
+        assertEquals("Both numbers must be provided and cannot be null", exception3.getMessage(), "Invalid exception message");
+    }
+
+    @Test
+    void shouldReturnDifferenceOfTwoNumbers() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.subtract(10, 4);
+
+        assertEquals(6, result, "Incorrect difference");
+    }
+
+    @Test
+    void shouldThrowIllegalArgumentExceptionForSubtraction() {
+        Calculator calculator = new Calculator();
+
+        IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.subtract(null, 10));
+        assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> calculator.subtract(10, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception2.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> calculator.subtract(null, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception3.getMessage(), "Invalid exception message");
+    }
+
+    @Test
+    void shouldReturnProductOfTwoNumbers() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.multiply(5, 8);
+
+        assertEquals(40, result, "Incorrect product");
+    }
+
+    @Test
+    void shouldThrowIllegalArgumentExceptionForMultiplication() {
+        Calculator calculator = new Calculator();
+
+        IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.multiply(null, 10));
+        assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> calculator.multiply(10, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception2.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> calculator.multiply(null, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception3.getMessage(), "Invalid exception message");
     }
 
     @Test
