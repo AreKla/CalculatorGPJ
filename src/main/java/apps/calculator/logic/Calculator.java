@@ -23,6 +23,16 @@ public class Calculator {
         return a * b;
     }
 
+    public int divide(Integer a, Integer b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Both numbers must be provided and cannot be null");
+        }
+        if (b == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+
     public int findMax(int[] array) {
         int max = Integer.MIN_VALUE;
         for (int i : array) {

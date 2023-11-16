@@ -97,6 +97,39 @@ class CalculatorTest {
     }
 
     @Test
+    void shouldReturnQuotient() {
+        Calculator calculator = new Calculator();
+
+        int result1 = calculator.divide(10, 2);
+        int result2 = calculator.divide(-20, 4);
+
+        assertEquals(5, result1, "Incorrect quotient for positive numbers");
+        assertEquals(-5, result2, "Incorrect quotient for negative numbers");
+    }
+
+    @Test
+    void shouldThrowIllegalArgumentExceptionForNullInputs() {
+        Calculator calculator = new Calculator();
+
+        IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.divide(null, 10));
+        assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception2.getMessage(), "Invalid exception message");
+
+        IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> calculator.divide(null, null));
+        assertEquals("Both numbers must be provided and cannot be null", exception3.getMessage(), "Invalid exception message");
+    }
+
+    @Test
+    void shouldThrowArithmeticExceptionForDivisionByZero() {
+        Calculator calculator = new Calculator();
+
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
+        assertEquals("Cannot divide by zero", exception.getMessage(), "Invalid exception message");
+    }
+
+    @Test
     void shouldReturnMaxValue() {
         Calculator calculator = new Calculator();
 

@@ -19,6 +19,7 @@ public class Main {
                 case "+" -> instructionsToSum(calculator);
                 case "-" -> instructionsToSubtraction(calculator);
                 case "*" -> instructionsToMultiple(calculator);
+                case "/" -> instructionsToDivision(calculator);
                 case "E" -> {
                     System.out.println("Calculator is stopping!");
                     flag = false;
@@ -54,6 +55,20 @@ public class Main {
         int result = calculator.multiply(a, b);
         System.out.println(result);
     }
+
+    private static void instructionsToDivision(Calculator calculator) {
+        System.out.println("Enter dividend:");
+        int a = scanner.nextInt();
+        System.out.println("Enter divisor:");
+        int b = scanner.nextInt();
+        try {
+            int result = calculator.divide(a, b);
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     private static void printMenu() {
         //wypisz opcje
