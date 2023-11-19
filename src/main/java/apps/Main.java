@@ -11,7 +11,6 @@ public class Main {
         Calculator calculator = new Calculator();
 
         System.out.println("Calculator is starting!");
-        printMenu();
         boolean flag = true;
         while (flag) {
             printMenu();
@@ -31,36 +30,36 @@ public class Main {
 
     private static void instructionsToSum(Calculator calculator) {
         System.out.println("Enter first number:");
-        int a = scanner.nextInt();
+        int a = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter second number:");
-        int b = scanner.nextInt();
+        int b = Integer.parseInt(scanner.nextLine());
         int result = calculator.add(a, b);
         System.out.println(result);
     }
 
     private static void instructionsToSubtraction(Calculator calculator) {
         System.out.println("Enter first number:");
-        int a = scanner.nextInt();
+        int a = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter second number:");
-        int b = scanner.nextInt();
+        int b = Integer.parseInt(scanner.nextLine());
         int result = calculator.subtract(a, b);
         System.out.println(result);
     }
 
     private static void instructionsToMultiple(Calculator calculator) {
         System.out.println("Enter first number:");
-        int a = scanner.nextInt();
+        int a = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter second number:");
-        int b = scanner.nextInt();
+        int b = Integer.parseInt(scanner.nextLine());
         int result = calculator.multiply(a, b);
         System.out.println(result);
     }
 
     private static void instructionsToDivision(Calculator calculator) {
         System.out.println("Enter dividend:");
-        int a = scanner.nextInt();
+        int a = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter divisor:");
-        int b = scanner.nextInt();
+        int b = Integer.parseInt(scanner.nextLine());
         try {
             int result = calculator.divide(a, b);
             System.out.println(result);
