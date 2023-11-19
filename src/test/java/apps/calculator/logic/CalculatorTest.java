@@ -1,5 +1,6 @@
 package apps.calculator.logic;
 
+import apps.calculator.history.ResultHistory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,7 +10,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnSumOfTwoNumbers() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result = calculator.add(4, 6);
 
@@ -18,7 +19,7 @@ class CalculatorTest {
 
     @Test
     void shouldAddLargeAndSmallNumbers() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result1 = calculator.add(Integer.MAX_VALUE - 15, 5);
         int result2 = calculator.add(Integer.MIN_VALUE, 1);
@@ -29,7 +30,7 @@ class CalculatorTest {
 
     @Test
     void shouldAddZero() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result = calculator.add(0, 100);
 
@@ -38,7 +39,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowIllegalArgumentException() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.add(null, 10));
         assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
@@ -52,7 +53,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnDifferenceOfTwoNumbers() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result = calculator.subtract(10, 4);
 
@@ -61,7 +62,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowIllegalArgumentExceptionForSubtraction() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.subtract(null, 10));
         assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
@@ -75,7 +76,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnProductOfTwoNumbers() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result = calculator.multiply(5, 8);
 
@@ -84,7 +85,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowIllegalArgumentExceptionForMultiplication() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.multiply(null, 10));
         assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
@@ -98,7 +99,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnQuotient() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int result1 = calculator.divide(10, 2);
         int result2 = calculator.divide(-20, 4);
@@ -109,7 +110,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowIllegalArgumentExceptionForNullInputs() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> calculator.divide(null, 10));
         assertEquals("Both numbers must be provided and cannot be null", exception1.getMessage(), "Invalid exception message");
@@ -123,7 +124,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowArithmeticExceptionForDivisionByZero() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         ArithmeticException exception = assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
         assertEquals("Cannot divide by zero", exception.getMessage(), "Invalid exception message");
@@ -131,7 +132,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnMaxValue() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int[] array = {-100, -45, 0, 37};
 
@@ -142,7 +143,7 @@ class CalculatorTest {
 
     @Test
     void shouldReturnFibonacciForNumber() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         int fibonacci = calculator.fibonacci(8);
 
@@ -151,7 +152,7 @@ class CalculatorTest {
 
     @Test
     void shouldIdentifyPrimeAndNonPrimeNumbers() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ResultHistory());
 
         boolean isPrimeFor2 = calculator.isPrime(2);
         boolean isNotPrimeFor4 = calculator.isPrime(4);

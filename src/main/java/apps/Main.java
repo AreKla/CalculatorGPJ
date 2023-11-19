@@ -3,6 +3,7 @@ package apps;
 import apps.calculator.history.ResultHistory;
 import apps.calculator.logic.Calculator;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -21,6 +22,7 @@ public class Main {
                 case "-" -> instructionsToSubtraction(calculator);
                 case "*" -> instructionsToMultiple(calculator);
                 case "/" -> instructionsToDivision(calculator);
+                case "H" -> instructionsToHistory(resultHistory);
                 case "E" -> {
                     System.out.println("Calculator is stopping!");
                     flag = false;
@@ -70,18 +72,24 @@ public class Main {
         }
     }
 
+    private static void instructionsToHistory(ResultHistory resultHistory) {
+        System.out.println("Historia wyników:");
+        List<Integer> history = resultHistory.getResultHistory();
+        if (history.isEmpty()) {
+            System.out.println("Brak historii.");
+        } else {
+            System.out.println("Wszystkie wyniki: " + history);
+            System.out.println("Ostatni wynik: " + resultHistory.getLastResult());
+        }
+    }
+
     private static void printMenu() {
         System.out.println("Wybierz działanie:");
         System.out.println("(+) Dodawanie");
         System.out.println("(-) Odejmowanie");
         System.out.println("(*) Mnożenie");
         System.out.println("(/) Dzielenie");
+        System.out.println("(H) Historia wyników");
         System.out.println("(E) Exit");
     }
-
-    //TODO dodaj pętle i proste menu do obliczania. Możesz wykorzystać switch() jako menu, żeby użytkownik mógł coś wybierać, dodawanie, odejmowanie,
-    // mnożenie i dzielenie(nie można dzielić przez 0),
-    //Todo może dodasz ArrayList jako pamięć kalkulatora i będzie zapisywało wyniki jako kolejne rekordy, potem w menu głównym będzie można sprawdzić
-    // wszystkie wyniki albo np ostatni
-
 }
