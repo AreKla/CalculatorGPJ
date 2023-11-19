@@ -69,15 +69,15 @@ public class Main {
         }
     }
 
-
     private static void printMenu() {
-        //wypisz opcje
-        System.out.println("""
-                                   wybierz działanie:
-                                   (+) dodawanie ...
-                                   E exit
-                                   """);
+        System.out.println("Wybierz działanie:");
+        System.out.println("(+) Dodawanie");
+        System.out.println("(-) Odejmowanie");
+        System.out.println("(*) Mnożenie");
+        System.out.println("(/) Dzielenie");
+        System.out.println("(E) Exit");
     }
+
     //TODO dodaj pętle i proste menu do obliczania. Możesz wykorzystać switch() jako menu, żeby użytkownik mógł coś wybierać, dodawanie, odejmowanie,
     // mnożenie i dzielenie(nie można dzielić przez 0),
     //Todo może dodasz ArrayList jako pamięć kalkulatora i będzie zapisywało wyniki jako kolejne rekordy, potem w menu głównym będzie można sprawdzić
