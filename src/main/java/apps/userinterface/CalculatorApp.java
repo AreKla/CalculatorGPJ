@@ -26,38 +26,41 @@ public class CalculatorApp {
         System.out.println("(E) Exit");
     }
 
-    public void instructionsToSum() {
-        System.out.println("Enter first number:");
-        int a = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter second number:");
-        int b = Integer.parseInt(scanner.nextLine());
+    private static int getInputNumber(String prompt) {
+        System.out.println(prompt);
+        while (true) {
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
+    }
+
+    private static void instructionsToSum(Calculator calculator) {
+        int a = getInputNumber("Enter first number:");
+        int b = getInputNumber("Enter second number:");
         int result = calculator.add(a, b);
         System.out.println(result);
     }
 
-    public void instructionsToSubtraction() {
-        System.out.println("Enter first number:");
-        int a = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter second number:");
-        int b = Integer.parseInt(scanner.nextLine());
+    private static void instructionsToSubtraction(Calculator calculator) {
+        int a = getInputNumber("Enter first number:");
+        int b = getInputNumber("Enter second number:");
         int result = calculator.subtract(a, b);
         System.out.println(result);
     }
 
-    public void instructionsToMultiple() {
-        System.out.println("Enter first number:");
-        int a = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter second number:");
-        int b = Integer.parseInt(scanner.nextLine());
+    private static void instructionsToMultiple(Calculator calculator) {
+        int a = getInputNumber("Enter first number:");
+        int b = getInputNumber("Enter second number:");
         int result = calculator.multiply(a, b);
         System.out.println(result);
     }
 
-    public void instructionsToDivision() {
-        System.out.println("Enter dividend:");
-        int a = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter divisor:");
-        int b = Integer.parseInt(scanner.nextLine());
+    private static void instructionsToDivision(Calculator calculator) {
+        int a = getInputNumber("Enter dividend:");
+        int b = getInputNumber("Enter divisor:");
         try {
             int result = calculator.divide(a, b);
             System.out.println(result);

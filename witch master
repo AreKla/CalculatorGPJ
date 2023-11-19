@@ -1,0 +1,15 @@
+* [33me4df6c9[m[33m ([m[1;36mHEAD[m[33m)[m Resolved problem with history not displayed
+* [33mf6c787b[m Changed accessibility in CalculatorApp methods
+* [33m728df5f[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m Extracted input handling into a separate method
+* [33m1d90613[m Refactored code: separated CalculatorApp, organized package structure
+* [33mba87f5e[m Added getLastResult() method to ResultHistory
+* [33mfebc0fd[m Added result history functionality and menu option to view results
+* [33m8bd05b8[m Added ResultHistory for result tracking and updated Calculator to use it. Implemented basic calculator operations in Main with user input
+* [33md5bc5b1[m Added ResultHistry class
+* [33mf3a17c3[m Converted input methods to use nextLine() and parseInt() for better user interaction
+* [33meba765b[m Implemented menu printing in Main class
+* [33mbe03df8[m Added division method to Calculator class, implemented corresponding tests, and integrated into Main functionality
+* [33ma8fd4da[m Implemented multiplication instructions in Main class
+* [33m9bab61d[m Added subtraction and multiplication methods to Calculator class, implemented corresponding tests, and integrated into Main functionality
+* [33m398d500[m Added subtract method and improve error message in add method
+* [33mf10be08[m first commit
