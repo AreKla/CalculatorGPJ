@@ -17,4 +17,15 @@ public class ResultHistory {
     public void addToHistory(int result) {
         resultHistory.add(result);
     }
+
+    public String getLastResult() {
+        List<Integer> history = getResultHistory();
+
+        if (history.isEmpty()) {
+            return "Brak wyników w historii.";
+        } else {
+            int lastResult = history.get(history.size() - 1);
+            return "Ostatni wynik: " + lastResult;
+        }
+    }
 }
