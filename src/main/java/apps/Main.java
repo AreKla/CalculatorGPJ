@@ -1,5 +1,6 @@
 package apps;
 
+import apps.calculator.history.ResultHistory;
 import apps.calculator.logic.Calculator;
 
 import java.util.Scanner;
@@ -8,7 +9,8 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        ResultHistory resultHistory = new ResultHistory();
+        Calculator calculator = new Calculator(resultHistory);
 
         System.out.println("Calculator is starting!");
         boolean flag = true;

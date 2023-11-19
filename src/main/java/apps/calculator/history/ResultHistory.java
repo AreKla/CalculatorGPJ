@@ -1,4 +1,4 @@
-package apps.calculator.logic.history;
+package apps.calculator.history;
 
 import java.util.ArrayList;
 import java.util.List;

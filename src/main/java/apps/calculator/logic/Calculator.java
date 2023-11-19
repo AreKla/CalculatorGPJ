@@ -1,6 +1,18 @@
 package apps.calculator.logic;
 
+import apps.calculator.history.ResultHistory;
+
 public class Calculator {
+
+    private ResultHistory resultHistory;
+
+    public Calculator(ResultHistory resultHistory) {
+        this.resultHistory = resultHistory;
+    }
+
+    public void addToHistory(int result) {
+        resultHistory.addToHistory(result);
+    }
 
     public int add(Integer a, Integer b) {
         if (a == null || b == null) {
