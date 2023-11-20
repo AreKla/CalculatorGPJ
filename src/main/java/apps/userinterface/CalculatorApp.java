@@ -8,11 +8,9 @@ import java.util.List;
 import static apps.Main.scanner;
 
 public class CalculatorApp {
-    private Calculator calculator;
-    private static ResultHistory resultHistory;
+    private ResultHistory resultHistory;
 
     public CalculatorApp(Calculator calculator, ResultHistory resultHistory) {
-        this.calculator = calculator;
         this.resultHistory = resultHistory;
     }
 
@@ -37,7 +35,7 @@ public class CalculatorApp {
         }
     }
 
-    public static void instructionsToSum(Calculator calculator) {
+    public void instructionsToSum(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.add(a, b);
@@ -45,7 +43,7 @@ public class CalculatorApp {
         System.out.println(result);
     }
 
-    public static void instructionsToSubtraction(Calculator calculator) {
+    public void instructionsToSubtraction(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.subtract(a, b);
@@ -53,7 +51,7 @@ public class CalculatorApp {
         System.out.println(result);
     }
 
-    public static void instructionsToMultiple(Calculator calculator) {
+    public void instructionsToMultiple(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.multiply(a, b);
@@ -61,7 +59,7 @@ public class CalculatorApp {
         System.out.println(result);
     }
 
-    public static void instructionsToDivision(Calculator calculator) {
+    public void instructionsToDivision(Calculator calculator) {
         int a = getInputNumber("Enter dividend:");
         int b = getInputNumber("Enter divisor:");
         try {
