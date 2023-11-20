@@ -4,7 +4,6 @@ import apps.calculator.logic.Calculator;
 import apps.calculator.history.ResultHistory;
 import apps.userinterface.CalculatorApp;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -21,10 +20,10 @@ public class Main {
         while (flag) {
             calculatorApp.printMenu();
             switch (scanner.nextLine()) {
-                case "+" -> calculatorApp.instructionsToSum();
-                case "-" -> calculatorApp.instructionsToSubtraction();
-                case "*" -> calculatorApp.instructionsToMultiple();
-                case "/" -> calculatorApp.instructionsToDivision();
+                case "+" -> calculatorApp.instructionsToSum(calculator);
+                case "-" -> calculatorApp.instructionsToSubtraction(calculator);
+                case "*" -> calculatorApp.instructionsToMultiple(calculator);
+                case "/" -> calculatorApp.instructionsToDivision(calculator);
                 case "H" -> calculatorApp.instructionsToHistory();
                 case "E" -> {
                     System.out.println("Calculator is stopping!");

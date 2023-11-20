@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultHistory {
-    private List<Integer> resultHistory;
-
-    public ResultHistory() {
-        resultHistory = new ArrayList<>();
-    }
+    private List<Integer> resultHistory = new ArrayList<>();
 
     public List<Integer> getResultHistory() {
         return resultHistory;
@@ -19,12 +15,10 @@ public class ResultHistory {
     }
 
     public String getLastResult() {
-        List<Integer> history = getResultHistory();
-
-        if (history.isEmpty()) {
+        if (resultHistory.isEmpty()) {
             return "Brak wyników w historii.";
         } else {
-            int lastResult = history.get(history.size() - 1);
+            int lastResult = resultHistory.get(resultHistory.size() - 1);
             return "Ostatni wynik: " + lastResult;
         }
     }

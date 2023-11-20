@@ -9,7 +9,7 @@ import static apps.Main.scanner;
 
 public class CalculatorApp {
     private Calculator calculator;
-    private ResultHistory resultHistory;
+    private static ResultHistory resultHistory;
 
     public CalculatorApp(Calculator calculator, ResultHistory resultHistory) {
         this.calculator = calculator;
@@ -37,32 +37,36 @@ public class CalculatorApp {
         }
     }
 
-    private static void instructionsToSum(Calculator calculator) {
+    public static void instructionsToSum(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.add(a, b);
+        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
-    private static void instructionsToSubtraction(Calculator calculator) {
+    public static void instructionsToSubtraction(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.subtract(a, b);
+        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
-    private static void instructionsToMultiple(Calculator calculator) {
+    public static void instructionsToMultiple(Calculator calculator) {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.multiply(a, b);
+        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
-    private static void instructionsToDivision(Calculator calculator) {
+    public static void instructionsToDivision(Calculator calculator) {
         int a = getInputNumber("Enter dividend:");
         int b = getInputNumber("Enter divisor:");
         try {
             int result = calculator.divide(a, b);
+            resultHistory.addToHistory(result);
             System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
