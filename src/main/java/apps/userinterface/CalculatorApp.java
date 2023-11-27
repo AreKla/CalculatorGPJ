@@ -1,5 +1,6 @@
 package apps.userinterface;
 
+import apps.calculator.history.Result;
 import apps.calculator.logic.Calculator;
 import apps.calculator.history.ResultHistory;
 
@@ -39,7 +40,6 @@ public class CalculatorApp {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.add(a, b);
-        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
@@ -47,7 +47,6 @@ public class CalculatorApp {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.subtract(a, b);
-        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
@@ -55,7 +54,6 @@ public class CalculatorApp {
         int a = getInputNumber("Enter first number:");
         int b = getInputNumber("Enter second number:");
         int result = calculator.multiply(a, b);
-        resultHistory.addToHistory(result);
         System.out.println(result);
     }
 
@@ -64,7 +62,6 @@ public class CalculatorApp {
         int b = getInputNumber("Enter divisor:");
         try {
             int result = calculator.divide(a, b);
-            resultHistory.addToHistory(result);
             System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
@@ -73,11 +70,11 @@ public class CalculatorApp {
 
     public void instructionsToHistory() {
         System.out.println("Historia wyników:");
-        List<Integer> history = resultHistory.getResultHistory();
-        if (history.isEmpty()) {
+        List<Result> results = resultHistory.getResultHistory();
+        if (results.isEmpty()) {
             System.out.println("Brak historii.");
         } else {
-            System.out.println("Wszystkie wyniki: " + history);
+            System.out.println("Wszystkie wyniki: " + results);
             System.out.println("Ostatni wynik: " + resultHistory.getLastResult());
         }
     }

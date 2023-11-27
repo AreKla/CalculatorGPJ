@@ -10,16 +10,16 @@ public class Calculator {
         this.resultHistory = resultHistory;
     }
 
-    public void addToHistory(int result) {
-        resultHistory.addToHistory(result);
-    }
-
     public int add(Integer a, Integer b) {
         if (a == null || b == null) {
             throw new IllegalArgumentException("Both numbers must be provided and cannot be null");
         }
-        return a + b;
+        int i = a + b;
+        resultHistory.addToHistory(i, String.format("Sum of %d + %d", a, b));
+        return i;
     }
+
+    //TODO możesz dodać metodę zapisu do pamięci kalkulatora w pozostałych metodach
 
     public int subtract(Integer a, Integer b) {
         if (a == null || b == null) {

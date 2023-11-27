@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultHistory {
-    private List<Integer> resultHistory = new ArrayList<>();
+    private List<Result> resultHistory = new ArrayList<>();
 
-    public List<Integer> getResultHistory() {
+    //można zapisywać wartości jako nowy obiekt Result i dodawać do listy
+
+    public List<Result> getResultHistory() {
         return resultHistory;
     }
 
-    public void addToHistory(int result) {
-        resultHistory.add(result);
+    public void addToHistory(int result, String nameOfAction) {
+        resultHistory.add(new Result(result, nameOfAction));
     }
 
     public String getLastResult() {
         if (resultHistory.isEmpty()) {
             return "Brak wyników w historii.";
         } else {
-            int lastResult = resultHistory.get(resultHistory.size() - 1);
+            int lastResult = resultHistory.get(resultHistory.size() - 1).result();
             return "Ostatni wynik: " + lastResult;
         }
     }
